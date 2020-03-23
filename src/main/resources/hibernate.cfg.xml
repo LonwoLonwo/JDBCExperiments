@@ -20,5 +20,7 @@
         <property name="hbm2ddl.auto">validate</property><!--В данном случае он серит струтуру базы данных и структуру java-классов, сообщит об ошибках-->
 
         <mapping class="Course"></mapping>
+        <mapping class="Teacher"></mapping>
+        <mapping class="Student"></mapping>
     </session-factory>
 </hibernate-configuration>

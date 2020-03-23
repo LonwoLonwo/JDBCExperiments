@@ -1,5 +1,6 @@
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.hibernate.boot.Metadata;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
@@ -13,6 +14,7 @@ public class Main {
         SessionFactory sessionFactory = metadata.getSessionFactoryBuilder().build();
 
         Session session = sessionFactory.openSession();
+        Transaction transaction = session.beginTransaction();
 
         Course course = session.get(Course.class, 2);
 
@@ -24,6 +26,11 @@ public class Main {
         System.out.println("Стоимость курса \"" + courseTwo.getName() + "\": " + course.getPrice() + '\u20BD');
         System.out.println("Описание курса \"" + courseTwo.getName() + "\" гласит: " + courseTwo.getDescription());
 
+        System.out.println("Курс \"" + course.getName() + "\" ведёт преподаватель: " + course.getTeacher().getName());
+
+        System.out.println("Количество учеников курса \"" + courseTwo.getName() + "\": " + courseTwo.getStudents().size());
+
+        transaction.commit();
         sessionFactory.close();
     }
 }
