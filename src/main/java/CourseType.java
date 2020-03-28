@@ -3,5 +3,5 @@ public enum CourseType {
     PROGRAMMING,
     MARKETING,
     MANAGEMENT,
-    BUISNESS
+    BUSINESS
 }

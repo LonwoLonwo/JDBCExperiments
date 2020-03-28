@@ -18,7 +18,7 @@ public class Main {
 
         Course course = session.get(Course.class, 2);
 
-        System.out.println("Длительность курса \"" + course.getName() + "\" составляет " + course.getDuration() + " часов.");
+        System.out.println("Длительность курса \"" + course.getName() + "\" составляет " + course.getDuration() + " часов. Он относится к типу: " + course.getType());
         System.out.println("На курсе учится " + course.getStudentsCount() + " студентов");
 
         Course courseTwo = session.get(Course.class, 4);
