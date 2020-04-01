@@ -30,6 +30,8 @@ public class Main {
 
         System.out.println("Количество учеников курса \"" + courseTwo.getName() + "\": " + courseTwo.getStudents().size());
 
+        course.getStudents().forEach(s -> System.out.println(s.getName()));
+
         transaction.commit();
         sessionFactory.close();
     }
