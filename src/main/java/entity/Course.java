@@ -55,8 +55,8 @@ public class Course {
     private List<Student> students;
 
 
-/*   @OneToMany(mappedBy = "courses")
-    private Set<Subscription> students;*/
+/*   @OneToMany(mappedBy = "course")
+    private List<Subscription> students;*/
 
 
 }
