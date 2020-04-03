@@ -1,3 +1,5 @@
+package entity;
+
 import lombok.Data;
 
 import javax.persistence.*;
@@ -35,9 +37,10 @@ public class Course {
 
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "Subscriptions",
-        joinColumns = {@JoinColumn(name = "course_id")}, //foreign key for Course in Subscriptions table
-        inverseJoinColumns = {@JoinColumn(name = "student_id")} //foreign key for other side for Course in Subscriptions table
+        joinColumns = {@JoinColumn(name = "course_id")}, //foreign key for entity.Course in Subscriptions table
+        inverseJoinColumns = {@JoinColumn(name = "student_id")} //foreign key for other side for entity.Course in Subscriptions table
    )
     private List<Student> students;
+
 
 }
