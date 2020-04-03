@@ -1,11 +1,16 @@
 package entity;
 
-import lombok.Data;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.Set;
 
-@Data
+@Getter
+@Setter
+@EqualsAndHashCode(of = {"name", "registrationDate"})
+@ToString(of = {"name", "age", "registrationDate"})
+@NoArgsConstructor
 @Entity
 @Table(name = "Students")
 public class Student {
@@ -19,4 +24,7 @@ public class Student {
 
     @Column(name = "registration_date")
     private Date registrationDate;
+
+    @OneToMany(mappedBy = "student")
+    private Set<Subscription> courses;
 }

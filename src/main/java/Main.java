@@ -1,5 +1,6 @@
 import entity.Course;
 import entity.Student;
+import entity.Subscription;
 import entity.Teacher;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -40,6 +41,9 @@ public class Main {
 
         Teacher teacher = session.get(Teacher.class, 1);
         System.out.println("Первый преподаватель: " + teacher);
+
+        Subscription subscription = session.get(Subscription.class, 1);
+        System.out.println(subscription);
 
 
         transaction.commit();
