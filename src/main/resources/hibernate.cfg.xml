@@ -19,8 +19,9 @@
         <!-- Drop and re-create the database schema on startup если бы внизу было вместо validate create_drop-->
         <property name="hbm2ddl.auto">validate</property><!--В данном случае он серит струтуру базы данных и структуру java-классов, сообщит об ошибках-->
 
-        <mapping class="Course"></mapping>
-        <mapping class="Teacher"></mapping>
-        <mapping class="Student"></mapping>
+        <mapping class="entity.Course"></mapping>
+        <mapping class="entity.Teacher"></mapping>
+        <mapping class="entity.Student"></mapping>
+        <mapping class="entity.Subscription"></mapping>
     </session-factory>
 </hibernate-configuration>
