@@ -54,9 +54,4 @@ public class Course {
    )
     private List<Student> students;
 
-
-/*   @OneToMany(mappedBy = "course")
-    private List<Subscription> students;*/
-
-
 }

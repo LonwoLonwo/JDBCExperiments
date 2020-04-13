@@ -1,7 +1,4 @@
-import entity.Course;
-import entity.Student;
-import entity.Subscription;
-import entity.Teacher;
+import entity.*;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -42,6 +39,14 @@ public class Main {
         Teacher teacher = session.get(Teacher.class, 1);
         System.out.println("Первый преподаватель: " + teacher);
 
+        Subscription subscription = session.get(Subscription.class, new SubscriptionPKey(3, 2));
+        System.out.println(subscription);
+
+        Teacher teacher2 = session.get(Teacher.class, 10);
+
+        System.out.println(teacher2.getName() + " ведёт следующие курсы: ");
+        teacher2.getCourses().forEach(s -> System.out.println(s.getName()));
+        
         transaction.commit();
         sessionFactory.close();
     }

@@ -24,6 +24,6 @@ public class Teacher
 
     private int age;
 
-/*    @OneToMany (mappedBy="teacher", fetch=FetchType.LAZY)
-    private Set<Course> courses;*/
+    @OneToMany (mappedBy="teacher")
+    private Set<Course> courses;
 }
